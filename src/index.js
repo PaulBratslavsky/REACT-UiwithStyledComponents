@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter as Router, withRouter } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const RootWithRouter = withRouter(App);
+
+ReactDOM.render(<Router><RootWithRouter/></Router>, document.getElementById('root'));
 

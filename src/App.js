@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './content/Header/header';
-import Content from './content/Content/contents';
-import Footer from './content/Footer/footer';
+import Header from './Components/Header/header';
+import Content from './Components/Content/contents';
+import Footer from './Components/Footer/footer';
 
 const AppContainer = styled.div`
   height: 100vh;  

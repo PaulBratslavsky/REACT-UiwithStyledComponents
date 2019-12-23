@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Burger from '../Burger/burger';
 import Menu from '../Menu/menu';
 
+import { Container } from '../../stylesJS/Container';
+
 const HeaderContainer = styled.div`
     position: absolute;
     top: 0;
@@ -10,6 +12,9 @@ const HeaderContainer = styled.div`
     height: 75px;
     width: 100%;
     background: none;
+
+    display: flex;
+    align-items: center;
 `;
 
 const Header = () => {
@@ -20,7 +25,6 @@ const Header = () => {
         <HeaderContainer>
             <Burger open={open} setOpen={setOpen}/>
             <Menu open={open}/>
-            <p>Main Header</p>
         </HeaderContainer>
     )
 }

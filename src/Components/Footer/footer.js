@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiFillFire, AiOutlineHome, AiOutlineSearch, AiOutlineFire } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineSearch, AiOutlineFire } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
-
-
 
 
 const FooterContainer = styled.div`
@@ -14,11 +12,6 @@ const FooterContainer = styled.div`
     margin-bottom: 1rem;
 `;
 
-const TextSpan = styled.span`
-        font-size: 0.8rem;
-        color: #f6feff;
-        transition: 0.4s ease-in-out;
-`;
 
 const IconContainer = styled.div`
     display: flex;
@@ -26,8 +19,10 @@ const IconContainer = styled.div`
     justify-content: center;
     align-items: center;
 
-    &:hover ${TextSpan} {
-        color: #fb2b5e;
+    span {
+        font-size: 0.8rem;
+        color: #f6feff;
+        transition: 0.4s ease-in-out;
     }
     
     svg {
@@ -36,8 +31,12 @@ const IconContainer = styled.div`
         margin-bottom: 0.25rem;
         transition: 0.4s ease-in-out;
     }
-    
-    svg:hover {
+
+    &:hover > svg  {
+        color: #fb2b5e;
+    }
+
+    &:hover > span  {
         color: #fb2b5e;
     }
 `;
@@ -45,10 +44,10 @@ const IconContainer = styled.div`
 const Footer = () => {
     return(
         <FooterContainer>
-            <IconContainer><AiOutlineHome /><TextSpan>Home</TextSpan></IconContainer>
-            <IconContainer><AiOutlineFire /><TextSpan>Trending</TextSpan></IconContainer>
-            <IconContainer><AiOutlineSearch /><TextSpan>Explore</TextSpan></IconContainer>
-            <IconContainer><FiUser /><TextSpan>Dashboard</TextSpan></IconContainer>
+            <IconContainer><AiOutlineHome /><span>Home</span></IconContainer>
+            <IconContainer><AiOutlineFire /><span>Trending</span></IconContainer>
+            <IconContainer><AiOutlineSearch /><span>Explore</span></IconContainer>
+            <IconContainer><FiUser /><span>Dashboard</span></IconContainer>
         </FooterContainer>
     )
 }
