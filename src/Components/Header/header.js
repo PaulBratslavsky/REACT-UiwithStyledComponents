@@ -12,7 +12,7 @@ const HeaderContainer = styled.div`
     left: 0;
     height: 75px;
     width: 100%;
-    background: #1b1944;
+    background: #15142d;
     z-index: 200;
 
     display: flex;

@@ -6,7 +6,7 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #f6feff;
+  background: #3d3a68;
   height: 100vh;
   text-align: left;
   padding: 2rem;

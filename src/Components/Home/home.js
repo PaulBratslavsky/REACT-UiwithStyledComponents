@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Slider, Spacer } from '../../stylesJS/';
+import { Container, Slider, Spacer, BackgroundOverlay, TextOverlay } from '../../stylesJS/';
 
 
 import styled from 'styled-components';
@@ -12,47 +12,32 @@ const Card = styled.div`
     margin-right: 16px;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
 `;
 
 
 const Home = () => {
+    const [ toggleVideoState, setToggleVideoState ] = React.useState(true);
+
     return (
         <Container>
             <Spacer />
             <Slider>
-                <Card>
+                <Card onClick={() => setToggleVideoState(!toggleVideoState)}>
+                    <TextOverlay><h1>Hello</h1></TextOverlay> 
+                    <BackgroundOverlay /> 
                     <img style={{ display: 'block', objectFit: 'cover', height: '400px', width: '100%' }} src="./img/hero.jpg" alt="Hero Image"/>
                 </Card>
-                <Card>
+                <Card onClick={() => setToggleVideoState(!toggleVideoState)}>
+                    <TextOverlay><h1>Hello</h1></TextOverlay> 
+                    <BackgroundOverlay /> 
                     <img style={{ display: 'block', objectFit: 'cover', height: '400px', width: '100%' }} src="./img/hero.jpg" alt="Hero Image"/>
                 </Card>
-                <Card>
-                    <iframe id="ytplayer" type="text/html" width="100%" height="100%"
-                        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&fs=0&modestbranding=1"
-                        frameborder="0" allowfullscreen />
-                </Card>
-                <Card>
+                <Card onClick={() => setToggleVideoState(!toggleVideoState)}>
+                    <TextOverlay><h1>Hello</h1></TextOverlay> 
+                    <BackgroundOverlay /> 
                     <img style={{ display: 'block', objectFit: 'cover', height: '400px', width: '100%' }} src="./img/hero.jpg" alt="Hero Image"/>
                 </Card>
-    
-            </Slider>
-
-            <Slider>
-                <Card>
-                    <img style={{ display: 'block', objectFit: 'cover', height: '400px', width: '100%' }} src="./img/hero.jpg" alt="Hero Image"/>
-                </Card>
-                <Card>
-                    <img style={{ display: 'block', objectFit: 'cover', height: '400px', width: '100%' }} src="./img/hero.jpg" alt="Hero Image"/>
-                </Card>
-                <Card>
-                    <iframe id="ytplayer" type="text/html" width="100%" height="100%"
-                        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&fs=0&modestbranding=1"
-                        frameborder="0" allowfullscreen />
-                </Card>
-                <Card>
-                    <img style={{ display: 'block', objectFit: 'cover', height: '400px', width: '100%' }} src="./img/hero.jpg" alt="Hero Image"/>
-                </Card>
-    
             </Slider>
         </Container>
     );

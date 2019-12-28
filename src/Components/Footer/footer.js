@@ -34,11 +34,11 @@ const IconContainer = styled.div`
     }
 
     &:hover > svg  {
-        color: #fb2b5e;
+        color: #e0436f;
     }
 
     &:hover > span  {
-        color: #fb2b5e;
+        color: #e0436f;
     }
 `;
 

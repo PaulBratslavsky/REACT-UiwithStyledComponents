@@ -10,6 +10,8 @@ import NotFound from '../NotFound/notfound';
 
 const ContentContainer = styled.div`
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar { display: none; }
 `;
 
 const Content = () => {

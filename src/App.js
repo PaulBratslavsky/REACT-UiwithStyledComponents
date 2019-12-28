@@ -6,7 +6,7 @@ import Footer from './Components/Footer/footer';
 
 const AppContainer = styled.div`
   height: 100vh;  
-  background: #1b1944;
+  background: #15142d;
   display: grid;
   grid-template-rows: 1fr 100px;
 `;
