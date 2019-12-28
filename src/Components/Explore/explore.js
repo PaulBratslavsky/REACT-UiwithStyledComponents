@@ -1,10 +1,11 @@
 import React from 'react';
+import { Heading, Container } from '../../stylesJS/';
+
 
 const Explore = () => {
     return (
-        <div>
-            <h2>Explore</h2>
-        </div>
+        <Container>
+        </Container>
     );
 }
 

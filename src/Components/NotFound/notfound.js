@@ -1,11 +1,14 @@
 import React from 'react';
+import { Heading, Container } from '../../stylesJS/';
+
 
 const NotFound = () => {
     return (
-        <div>
-            <h2>Not Found</h2>
-        </div>
+        <Container>
+           <Heading>404: Not Found</Heading>
+        </Container>
     );
 }
 
 export default NotFound;
+
