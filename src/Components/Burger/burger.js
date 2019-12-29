@@ -3,7 +3,7 @@ import React from 'react';
 
 export const StyledBurger = styled.button`
   position: absolute;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   display: flex;
   flex-direction: column;
