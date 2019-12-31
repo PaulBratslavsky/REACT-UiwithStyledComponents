@@ -4,5 +4,14 @@ import { Slider } from './Slider';
 import { Spacer } from './Spacer';
 import { BackgroundOverlay } from './BackgroundOverlay';
 import { TextOverlay } from './TextOverlay';
+import { FlexCenter } from './FlexCenter';
 
-export { Container, Heading, Slider, Spacer, BackgroundOverlay, TextOverlay };
+export { 
+    Container,          
+    Heading,            
+    Slider, 
+    Spacer,             
+    BackgroundOverlay,  
+    TextOverlay, 
+    FlexCenter 
+};

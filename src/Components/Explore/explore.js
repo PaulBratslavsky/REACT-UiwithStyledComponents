@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Container } from '../../stylesJS/';
+import { Container } from '../../stylesJS/';
 
 
 const Explore = () => {

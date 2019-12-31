@@ -7,6 +7,7 @@ import Explore from '../Explore/explore';
 import Trending from '../Trending/trending';
 import Home from '../Home/home';
 import NotFound from '../NotFound/notfound';
+import AuthUser from '../AuthUser';
 
 const ContentContainer = styled.div`
     overflow: auto;
@@ -22,6 +23,7 @@ const Content = () => {
                 <Route path='/explore' component={Explore} />
                 <Route path='/trending' component={Trending} />
                 <Route path='/home' component={Home} />
+                <Route path='/login' component={AuthUser} />
                 <Route exact path='/' component={Home} />
                 <Route component={NotFound} />
             </Switch>

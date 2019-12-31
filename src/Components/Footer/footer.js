@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { AiOutlineHome, AiOutlineSearch, AiOutlineFire } from "react-icons/ai";
-import { FiUser } from "react-icons/fi";
+import { FiUser, FiLogIn } from "react-icons/fi";
 
 
 const FooterContainer = styled.div`
@@ -48,7 +48,10 @@ const Footer = () => {
             <Link to='/'><IconContainer><AiOutlineHome /><span>Home</span></IconContainer></Link>
             <Link to='/trending'><IconContainer><AiOutlineFire /><span>Trending</span></IconContainer></Link>
             <Link to='/explore'><IconContainer><AiOutlineSearch /><span>Explore</span></IconContainer></Link>
-            <Link to='/dashboard'><IconContainer><FiUser /><span>Dashboard</span></IconContainer></Link>
+            { false 
+                ?   <Link to='/dashboard'><IconContainer><FiUser /><span>Dashboard</span></IconContainer></Link>
+                :   <Link to='/login'><IconContainer><FiLogIn /><span>Login</span></IconContainer></Link>
+            }
         </FooterContainer>
     )
 }
