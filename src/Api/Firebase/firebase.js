@@ -1,12 +1,52 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyBsHBSgVaACuTTcswCmdTzVnoSghTUye8k",
-    authDomain: "ytedu-e15c1.firebaseapp.com",
-    databaseURL: "https://ytedu-e15c1.firebaseio.com",
-    projectId: "ytedu-e15c1",
-    storageBucket: "ytedu-e15c1.appspot.com",
-    messagingSenderId: "30747029548",
-    appId: "1:30747029548:web:fdcb80fea5d8554619e189"
-};
+import app from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+import { firebaseConfig } from './config';
+
+// Create Class 
+class Firebase {
+
+    constructor() {
+        // Initialize Firebase
+        app.initializeApp(firebaseConfig);
+        this.auth = app.auth();
+        this.db = app.firestore();
+    }
+
+    // Register Method
+    async createAccount(name, email, password) {
+        
+        const response = await this.auth.createUserWithEmailAndPassword(email, password);
+        console.log('REGISTER METHOD CALLED', response);
+
+        // Update name on profile
+        await response.user.updateProfile({
+            displayName: name
+        }); 
+
+        const newUser = {
+            name: response.user.displayName,
+        }
+
+        // Add user to database
+        return await this.db.collection('users').doc(response.user.uid).set(newUser);
+    }
+
+    // SIGN IN METHOD
+    async login(email,password) {
+        const response = await this.auth.signInWithEmailAndPassword(email, password);
+        console.log('SIGN IN METHOD CALLED', response);
+        return response;        
+    }
+
+    // LOG OUT METHOD
+    async logout() {
+        await this.auth.signOut();
+    }
+
+}
+
+const firebase = new Firebase();
+
+export default firebase;

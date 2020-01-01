@@ -49,18 +49,20 @@ const FormGroup = styled.div`
         display: inline;
         color: #14dbf4;
         width: 100%;
-        margin-bottom: 1rem;
         font-size: 1.8rem;
         padding: 0.275rem .75rem ;
         background: none;
         border: none;
         border-bottom: 2px #3d3a68 solid;
         transition: 0.5s ease-in-out;
+        margin-bottom: 1rem;
 
     }
 
     input::placeholder { 
-        color: #3d3a68;
+        color: ${props => props.error ? "#e0436f" : "#3d3a68"};
+        opacity: ${props => props.error ? 0.7 : 1 };
+        
     }
 
     &:hover > svg {
@@ -79,4 +81,14 @@ const FormGroup = styled.div`
     }
 `;
 
-export { LoginHeader, Form, FormGroup };
+const Error = styled.p`
+    font-size: 1.8rem;
+    padding: 0.275rem .75rem ;
+    border: none;
+    border-radius: 5px;
+    background: #e0436f;
+    color: #14132d;
+    border: 2px #e0436f solid;
+`;
+
+export { LoginHeader, Form, FormGroup, Error };

@@ -4,7 +4,7 @@ import { AiFillFire, AiOutlineUnlock } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { LoginHeader, Form, FormGroup } from '../../stylesJS/AuthUser';
 
-
+import firebase from '../../Api/Firebase/firebase';
 
 
 
