@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, Spacer, FlexCenter } from '../../stylesJS/';
+import React from 'react';
+import { Container, FlexCenter, SpanMute } from '../../stylesJS/';
 import CreateUser from './createuser';
 import Login from './login';
 
@@ -12,8 +12,9 @@ const AuthUser = () => {
         <Container style={{height: '100%'}}>
           <FlexCenter>
             { toggleMenuState ? <Login /> : <CreateUser /> }
+            <SpanMute onClick={() => setToggleMenuState(!toggleMenuState)}>{ toggleMenuState ? <p>Don't have account?</p> : <p>Have account?</p> }</SpanMute>
+            <SpanMute>Forgot Password</SpanMute>
           </FlexCenter>
-          <button onClick={() => setToggleMenuState(!toggleMenuState)}>{ toggleMenuState ? <p>Don't have account</p> : <p>Have account</p> }</button>
         </Container>
     )
 }

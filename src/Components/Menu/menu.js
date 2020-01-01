@@ -6,7 +6,8 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #3d3a68;
+  background: #15142d;
+  opacity: 0.98;
   height: 100vh;
   text-align: left;
   padding: 2rem;
@@ -16,6 +17,7 @@ export const StyledMenu = styled.nav`
   z-index: 300;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  border-right: 2px #e0436f solid;
   
   @media (max-width: 320px) {
     width: 100%;
@@ -27,7 +29,7 @@ export const StyledMenu = styled.nav`
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: green;
+    color: #e0436f;
     text-decoration: none;
     transition: color 0.3s linear;
     
@@ -37,17 +39,33 @@ export const StyledMenu = styled.nav`
     }
 
     &:hover {
-      color: green;
+      color: white;
     }
   }
 `;
 
-const Menu = ({open}) => {
+const Menu = ({open, setOpen}) => {
     return (
       <StyledMenu open={open}>
-        <NavLink to='/'>
+        <NavLink onClick={() => setOpen(false)} to='/'>
           <span role="img" aria-label="about us"></span>
           Home
+        </NavLink>
+        <NavLink onClick={() => setOpen(false)} to='/trending'>
+          <span role="img" aria-label="about us"></span>
+          Trending
+        </NavLink>
+        <NavLink onClick={() => setOpen(false)} to='/explore'>
+          <span role="img" aria-label="about us"></span>
+          Explore
+        </NavLink>
+        <NavLink onClick={() => setOpen(false)} to='/dashboard'>
+          <span role="img" aria-label="about us"></span>
+          Dashboard
+        </NavLink>
+        <NavLink onClick={() => setOpen(false)} to='/login'>
+          <span role="img" aria-label="about us"></span>
+          Login
         </NavLink>
       </StyledMenu>
     )

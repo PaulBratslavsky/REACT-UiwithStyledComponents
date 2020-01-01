@@ -1,46 +1,28 @@
 import React from 'react';
 import { Heading } from '../../stylesJS';
-import styled from 'styled-components';
+import { AiFillFire, AiOutlineUnlock } from "react-icons/ai";
+import { FiUser } from "react-icons/fi";
+import { LoginHeader, Form, FormGroup } from '../../stylesJS/AuthUser';
 
 
-const Form = styled.form`
-    width: 100%;
 
-    input,
-    button {
-        display: block;
-        color: white;
-        width: 100%;
-        margin-bottom: 1rem;
-        font-size: 1.8rem;
-        padding: 0.275rem .75rem ;
-        background: #757396;
-        border-radius: 5px;
-        border: none;
-    }
 
-    input::placeholder { 
-        color: #14132d;
-    }
-
-    button {
-        background: #e0436f;
-        color: #14132d;
-        border: 2px #e0436f solid;
-    }
-
-    button:hover {
-        background: #14132d;
-        color: #e0436f;
-    }
-`;
 
 const Login = () => {
     return (
         <div style={{width: '100%'}}>
+            <LoginHeader>
+                <AiFillFire />
+                <Heading>Login</Heading>
+            </LoginHeader>
+            
             <Form>
-                <input type="email" name="" id="" placeholder="user email"/>
-                <input type="password" name="" id="" placeholder="user password"/>
+                <FormGroup>
+                    <FiUser/><input type="email" name="" id="" placeholder="user email"/>
+                </FormGroup>
+                <FormGroup>
+                    <AiOutlineUnlock  /><input type="password" name="" id="" placeholder="user password"/>
+                </FormGroup>
                 <button type="submit" name="" id="">Login</button>
             </Form>
         </div>

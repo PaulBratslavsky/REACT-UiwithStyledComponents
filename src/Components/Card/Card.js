@@ -45,7 +45,7 @@ export default function Card() {
                                 </ImageContainer>
 
                     }</div>
-                    <div style={{ position: "absolute", bottom: 0, right: 0, height: '50%', width: '100%', background: 'none'}} ><Burger open={toggleVideoState} setOpen={setToggleVideoState} /></div>
+                    <div style={{ position: "absolute", bottom: 0, right: 0, height: '50%', width: '100%', background: 'none'}} ><Burger zindex='150' open={toggleVideoState} setOpen={setToggleVideoState} /></div>
 
         </CardContainer>
     )

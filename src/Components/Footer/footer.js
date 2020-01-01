@@ -33,13 +33,12 @@ const IconContainer = styled.div`
         transition: 0.4s ease-in-out;
     }
 
-    &:hover > svg  {
+    &:hover > svg,
+    &:hover > span {
         color: #e0436f;
     }
 
-    &:hover > span  {
-        color: #e0436f;
-    }
+    
 `;
 
 const Footer = () => {

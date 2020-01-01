@@ -5,6 +5,7 @@ import { Spacer } from './Spacer';
 import { BackgroundOverlay } from './BackgroundOverlay';
 import { TextOverlay } from './TextOverlay';
 import { FlexCenter } from './FlexCenter';
+import { SpanMute } from './SpanMute';
 
 export { 
     Container,          
@@ -13,5 +14,6 @@ export {
     Spacer,             
     BackgroundOverlay,  
     TextOverlay, 
-    FlexCenter 
+    FlexCenter, 
+    SpanMute
 };

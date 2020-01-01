@@ -34,8 +34,8 @@ const Header = (props) => {
                 <Heading>{ pageNameCapitalize === '' ? 'Home' : pageNameCapitalize }</Heading>
             </Container>
             
-            <Burger open={open} setOpen={setOpen}/>
-            <Menu open={open}/>
+            <Burger open={open} setOpen={setOpen} />
+            <Menu open={open} setOpen={setOpen}/>
         </HeaderContainer>
     )
 }
