@@ -6,6 +6,7 @@ import { BackgroundOverlay } from './BackgroundOverlay';
 import { TextOverlay } from './TextOverlay';
 import { FlexCenter } from './FlexCenter';
 import { SpanMute } from './SpanMute';
+import { Button } from './Button';
 
 export { 
     Container,          
@@ -15,5 +16,6 @@ export {
     BackgroundOverlay,  
     TextOverlay, 
     FlexCenter, 
-    SpanMute
+    SpanMute,
+    Button
 };

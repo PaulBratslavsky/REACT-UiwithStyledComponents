@@ -17,6 +17,11 @@ const ListCardContainer = styled.div`
     position: relative;
     background: #27264b;
     margin-bottom: 1rem;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+        background: #3e396a;
+    }
 `;
 
 const ListImageContainer = styled.div`

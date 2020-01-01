@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Slider, Spacer } from '../../stylesJS/';
+import { Container, Slider, Spacer, Button } from '../../stylesJS/';
 import Card from '../Card/Card';
 import ListCard from '../ListCard/listcard';
 
@@ -17,12 +17,14 @@ const Home = () => {
                 <Card />
                 <Card />
                 <Card />
+                <Card />
             </Slider>
             <ListCard />
             <ListCard />
             <ListCard />
             <ListCard />
             <ListCard />
+            <Button>Load More</Button>
         </Container>
     );
 }
