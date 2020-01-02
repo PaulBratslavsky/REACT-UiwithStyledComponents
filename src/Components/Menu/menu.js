@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import firebase from '../../Api/Firebase/firebase';
 
 export const StyledMenu = styled.nav`
   display: flex;
@@ -24,11 +25,11 @@ export const StyledMenu = styled.nav`
   }
 
   a {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
-    padding: 2rem 0;
+    padding: 1rem 0;
     font-weight: bold;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
     color: #e0436f;
     text-decoration: none;
     transition: color 0.3s linear;
@@ -45,6 +46,12 @@ export const StyledMenu = styled.nav`
 `;
 
 const Menu = ({open, setOpen}) => {
+    
+    function logOut() {
+      firebase.logout();
+      setOpen(false);
+    }
+
     return (
       <StyledMenu open={open}>
         <NavLink onClick={() => setOpen(false)} to='/'>
@@ -63,9 +70,9 @@ const Menu = ({open, setOpen}) => {
           <span role="img" aria-label="about us"></span>
           Dashboard
         </NavLink>
-        <NavLink onClick={() => setOpen(false)} to='/login'>
-          <span role="img" aria-label="about us"></span>
-          Login
+        <NavLink onClick={logOut} to='/'>
+          <span role="img" aria-label="logout"></span>
+          Log Out
         </NavLink>
       </StyledMenu>
     )

@@ -3,12 +3,14 @@ import { Heading } from '../../stylesJS';
 import { AiFillFire, AiOutlineUnlock } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { LoginHeader, Form, FormGroup } from '../../stylesJS/AuthUser';
+import { withRouter } from 'react-router-dom';
+
 
 import firebase from '../../Api/Firebase/firebase';
 
 
 
-const Login = () => {
+const Login = (props) => {
 
     const initialState = { email: '', password: ''};
     const [ inputState, setInputState ] = React.useState(initialState);
@@ -51,7 +53,8 @@ const Login = () => {
             showErrors();
         } else {
             setLodingState(true);
-            submitForm(); 
+            setInputState(initialState);
+            authenticateUser(); 
         }
 
     }
@@ -60,13 +63,21 @@ const Login = () => {
         console.log('You have errors');
     };
 
-    function submitForm() {
-        console.log('Form Submitted');
+    function authenticateUser() {
+        firebase.login(email, password)
+        .then( response => {
+            console.log('Form Submitted', response);
+            props.history.push('/dashboard');
+        })
+        .catch( error => { 
+            console.error('Firebase Error: ', error);
+            setLodingState(false);
+        });
     }
 
 
     const { email, password } = inputState;
-    console.log(errorsState);
+    console.log(errorsState, props);
 
     return (
         <div style={{width: '100%'}}>
@@ -102,4 +113,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default withRouter(Login);

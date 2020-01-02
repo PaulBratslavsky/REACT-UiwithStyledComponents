@@ -61,6 +61,7 @@ const FormGroup = styled.div`
     }
 
     input::placeholder { 
+        font-size: 1.6rem;
         color: ${props => props.error ? "#e0436f" : "#3d3a68"};
         opacity: ${props => props.error ? 0.7 : 1 };
         

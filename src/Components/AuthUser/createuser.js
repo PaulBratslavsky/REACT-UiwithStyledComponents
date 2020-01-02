@@ -3,6 +3,8 @@ import { Heading } from '../../stylesJS';
 import { AiFillFire, AiOutlineUnlock, AiOutlineMail } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { LoginHeader, Form, FormGroup, Error } from '../../stylesJS/AuthUser';
+import { withRouter } from 'react-router-dom';
+
 
 import firebase from '../../Api/Firebase/firebase';
 
@@ -12,9 +14,9 @@ import firebase from '../../Api/Firebase/firebase';
 
 
 
-const CreateUser = () => {
+const CreateUser = (props) => {
 
-    const initialState = { email: '', password: ''};
+    const initialState = { name: '', email: '', password: '' };
     const [ inputState, setInputState ] = React.useState(initialState);
     const [ loadingState, setLodingState ] = React.useState(false);
     const [ errorsState, setErrorsState ] = React.useState({});
@@ -42,7 +44,7 @@ const CreateUser = () => {
             errors.email = 'Email is required'
         }
 
-        // Password Emmail
+        // Password Error
         if (!values.password) {
             errors.password = 'Password is required'
         }
@@ -61,7 +63,8 @@ const CreateUser = () => {
             showErrors();
         } else {
             setLodingState(true);
-            submitForm(); 
+            setInputState(initialState);
+            createUser(); 
         }
 
     }
@@ -70,13 +73,24 @@ const CreateUser = () => {
         console.log('You have errors');
     };
 
-    function submitForm() {
-        console.log('Form Submitted');
+    function createUser() {
+        firebase.createAccount(name, email, password)
+        .then( response => {
+            console.log('Form Submitted', response);
+            props.history.push('/dashboard');
+
+        })
+        .catch( error => {
+            console.error('Firebase Error: ', error);
+            setLodingState(false); 
+        });
     }
 
 
     const { name, email, password } = inputState;
     console.log(errorsState);
+
+    
 
     return (
         <div style={{width: '100%'}}>
@@ -112,7 +126,7 @@ const CreateUser = () => {
                     <AiOutlineUnlock/>
                         <input 
                             onChange={handleChange}
-                            vlaue={password}
+                            value={password}
                             type="password" 
                             name="password" 
                             placeholder={errorsState.password ? errorsState.password : "user password"}
@@ -124,4 +138,4 @@ const CreateUser = () => {
     );
 }
 
-export default CreateUser;
+export default withRouter(CreateUser);
