@@ -9,6 +9,65 @@ import firebase from '../../Api/Firebase/firebase';
 
 
 const Login = () => {
+
+    const initialState = { email: '', password: ''};
+    const [ inputState, setInputState ] = React.useState(initialState);
+    const [ loadingState, setLodingState ] = React.useState(false);
+    const [ errorsState, setErrorsState ] = React.useState({});
+
+    function handleChange(event) {
+        event.persist();
+
+        setInputState(previousValues => ({
+            ...previousValues,
+            [event.target.name]: event.target.value
+        }))
+    }
+
+    function validateForm(values) {
+        let errors = {};
+
+        // Email Error
+        if (!values.email) {
+            errors.email = 'Email is required'
+        }
+
+        // Password Emmail
+        if (!values.password) {
+            errors.password = 'Password is required'
+        }
+
+        setErrorsState(errors);
+        return errors;
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const inputErrors = validateForm(inputState); 
+        setErrorsState(inputErrors);
+
+        if ( Object.values(inputErrors).length !== 0 ) {
+            showErrors();
+        } else {
+            setLodingState(true);
+            submitForm(); 
+        }
+
+    }
+
+    function showErrors() {
+        console.log('You have errors');
+    };
+
+    function submitForm() {
+        console.log('Form Submitted');
+    }
+
+
+    const { email, password } = inputState;
+    console.log(errorsState);
+
     return (
         <div style={{width: '100%'}}>
             <LoginHeader>
@@ -16,14 +75,28 @@ const Login = () => {
                 <Heading>Login</Heading>
             </LoginHeader>
             
-            <Form>
-                <FormGroup>
-                    <FiUser/><input type="email" name="" id="" placeholder="user email"/>
+            <Form onSubmit={handleSubmit}>
+                <FormGroup  error={errorsState.email}>
+                    <FiUser/>
+                    <input
+                        onChange={handleChange} 
+                        value={email}
+                        type="email" 
+                        name="email"
+                        placeholder={errorsState.email ? errorsState.email : "user email"}
+                    />
                 </FormGroup>
-                <FormGroup>
-                    <AiOutlineUnlock  /><input type="password" name="" id="" placeholder="user password"/>
+                <FormGroup error={errorsState.password}>
+                    <AiOutlineUnlock  />
+                    <input
+                        onChange={handleChange} 
+                        value={password}
+                        type="password" 
+                        name="password"
+                        placeholder={errorsState.password ? errorsState.password : "user password"}
+                    />
                 </FormGroup>
-                <button type="submit" name="" id="">Login</button>
+                <button type="submit" name="" id="" disabled={loadingState} >{loadingState ? "Loading" : "Login"}</button>
             </Form>
         </div>
     );

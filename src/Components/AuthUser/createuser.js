@@ -3,6 +3,7 @@ import { Heading } from '../../stylesJS';
 import { AiFillFire, AiOutlineUnlock, AiOutlineMail } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { LoginHeader, Form, FormGroup, Error } from '../../stylesJS/AuthUser';
+
 import firebase from '../../Api/Firebase/firebase';
 
 
@@ -13,7 +14,7 @@ import firebase from '../../Api/Firebase/firebase';
 
 const CreateUser = () => {
 
-    const initialState = { name: '', email: '', password: ''};
+    const initialState = { email: '', password: ''};
     const [ inputState, setInputState ] = React.useState(initialState);
     const [ loadingState, setLodingState ] = React.useState(false);
     const [ errorsState, setErrorsState ] = React.useState({});

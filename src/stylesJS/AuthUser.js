@@ -32,7 +32,8 @@ const Form = styled.form`
         color: #14132d;
         border: 2px #e0436f solid;
 
-        &:hover {
+        &:hover,
+        &:focus {
         background: #14132d;
         color: #e0436f;
     }
@@ -65,7 +66,8 @@ const FormGroup = styled.div`
         
     }
 
-    &:hover > svg {
+    &:hover > svg,
+    &:focus > svg {
         color: #e0436f;
     }
 
