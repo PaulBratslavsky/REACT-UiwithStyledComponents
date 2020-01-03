@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading } from '../../stylesJS';
+import { Heading, Spacer } from '../../stylesJS';
 import { AiFillFire, AiOutlineUnlock, AiOutlineMail } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { LoginHeader, Form, FormGroup, Error } from '../../stylesJS/AuthUser';
@@ -94,6 +94,7 @@ const CreateUser = (props) => {
 
     return (
         <div style={{width: '100%'}}>
+            <Spacer />
             <LoginHeader>
                 <AiFillFire />
                 <Heading>Create Account</Heading>

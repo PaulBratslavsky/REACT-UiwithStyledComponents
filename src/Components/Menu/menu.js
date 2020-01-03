@@ -18,7 +18,9 @@ export const StyledMenu = styled.nav`
   z-index: 300;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-  border-right: 2px #e0436f solid;
+
+  ${({ open }) => open && `border-right: 2px #e0436f solid;`}
+
   
   @media (max-width: 320px) {
     width: 100%;

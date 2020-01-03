@@ -12,8 +12,8 @@ const AuthUser = () => {
         <Container style={{height: '100%'}}>
           <FlexCenter>
             { toggleMenuState ? <Login /> : <CreateUser /> }
-            <SpanMute onClick={() => setToggleMenuState(!toggleMenuState)}>{ toggleMenuState ? <p>Don't have account?</p> : <p>Have account?</p> }</SpanMute>
-            <SpanMute>Forgot Password</SpanMute>
+            <SpanMute opacity={true} onClick={() => setToggleMenuState(!toggleMenuState)}>{ toggleMenuState ? <p>Don't have account?</p> : <p>Have account?</p> }</SpanMute>
+            <SpanMute opacity={true} >Forgot Password</SpanMute>
           </FlexCenter>
         </Container>
     )

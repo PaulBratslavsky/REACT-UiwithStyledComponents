@@ -10,13 +10,14 @@ const HeaderContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    height: 75px;
+    height: 55px;
     width: 100%;
     background: #15142d;
     z-index: 200;
-
+    padding: 0 1rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 `;
 
 const Header = (props) => {
@@ -30,11 +31,9 @@ const Header = (props) => {
 
     return(
         <HeaderContainer>
-            <Container>
-                <Heading>{ pageNameCapitalize === '' ? 'Home' : pageNameCapitalize }</Heading>
-            </Container>
-            
+            <Heading >{ pageNameCapitalize === '' ? 'Home' : pageNameCapitalize }</Heading>
             <Burger open={open} setOpen={setOpen} />
+            
             <Menu open={open} setOpen={setOpen}/>
         </HeaderContainer>
     )
