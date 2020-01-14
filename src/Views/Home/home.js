@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Slider, Spacer, Button } from '../../stylesJS/';
-import Card from '../Card/Card';
-import ListCard from '../ListCard/listcard';
+import { Container, Slider, Spacer, Button } from '../../_StylesJS';
+import Card from '../../Components/Card/Card';
+import ListCard from '../../Components/ListCard/listcard';
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TextOverlay, BackgroundOverlay, FlexCenter } from '../../stylesJS';
+import { TextOverlay, BackgroundOverlay, FlexCenter } from '../../_StylesJS';
 import { FaRegPlayCircle } from "react-icons/fa";
 import { IoIosHeartEmpty } from "react-icons/io";
 

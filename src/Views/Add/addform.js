@@ -1,7 +1,7 @@
 import React from 'react';
-import { SpanMute, Spacer } from '../../stylesJS';
+import { SpanMute, Spacer } from '../../_StylesJS';
 import { FiLink } from "react-icons/fi";
-import { AddHeader, Form, FormGroup, Error } from '../../stylesJS/Add';
+import { AddHeader, Form, FormGroup, Error } from '../../_StylesJS/Add';
 import { withRouter } from 'react-router-dom';
 
 

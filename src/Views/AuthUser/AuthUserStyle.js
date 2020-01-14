@@ -14,9 +14,8 @@ const LoginHeader = styled.div`
     margin-bottom: 3rem;
 `;
 
-
-
 const Form = styled.form`
+    
     width: 100%;
 
     button {
@@ -36,7 +35,7 @@ const Form = styled.form`
         &:focus {
         background: #14132d;
         color: #e0436f;
-    }
+        }
 
     }
     

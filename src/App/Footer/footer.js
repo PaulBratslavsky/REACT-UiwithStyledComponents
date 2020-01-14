@@ -41,7 +41,7 @@ const IconContainer = styled.div`
     
 `;
 
-const Footer = () => {
+const Footer = ({user}) => {
     return(
         <FooterContainer>
             <Link to='/'><IconContainer><AiOutlineHome /><span>Home</span></IconContainer></Link>
@@ -49,7 +49,7 @@ const Footer = () => {
             <Link to='/explore'><IconContainer><AiOutlineSearch /><span>Explore</span></IconContainer></Link>
             <Link to='/add'><IconContainer><FiLink /><span>Add</span></IconContainer></Link>
 
-            { false 
+            { user 
                 ?   <Link to='/dashboard'><IconContainer><FiUser /><span>Dashboard</span></IconContainer></Link>
                 :   <Link to='/login'><IconContainer><FiLogIn /><span>Login</span></IconContainer></Link>
             }

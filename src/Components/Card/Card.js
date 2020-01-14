@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TextOverlay, BackgroundOverlay } from '../../stylesJS';
-import Burger from '../Burger/burger';
+import { TextOverlay, BackgroundOverlay } from '../../_StylesJS';
 
 
 

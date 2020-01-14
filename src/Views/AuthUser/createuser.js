@@ -1,18 +1,12 @@
 import React from 'react';
-import { Heading, Spacer } from '../../stylesJS';
+import { Heading, Spacer } from '../../_StylesJS';
 import { AiFillFire, AiOutlineUnlock, AiOutlineMail } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
-import { LoginHeader, Form, FormGroup, Error } from '../../stylesJS/AuthUser';
+import { LoginHeader, Form, FormGroup, Error } from './AuthUserStyle';
 import { withRouter } from 'react-router-dom';
 
 
 import firebase from '../../Api/Firebase/firebase';
-
-
-
-
-
-
 
 const CreateUser = (props) => {
 

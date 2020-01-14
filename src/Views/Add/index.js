@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, FlexCenter } from '../../stylesJS';
+import { Container, FlexCenter } from '../../_StylesJS';
 import AddForm from './addform';
 
 

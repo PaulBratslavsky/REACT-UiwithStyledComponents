@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Burger from '../Burger/burger';
+import Burger from '../../Components/Burger/burger';
 import Menu from '../Menu/menu';
-import { Container, Heading } from '../../stylesJS';
+import { Container, Heading } from '../../_StylesJS';
 import { withRouter } from 'react-router-dom';
 
 
